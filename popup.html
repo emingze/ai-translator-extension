@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI 翻译助手</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h9v2H7.6c-.5 2.4-1.8 4.5-3.6 6 .7 1.3 1.7 2.4 2.9 3.3l-1.3 1.5C3.4 16 2 14.3 1.2 12.4L0.9 11l.3-1.4C2 7.7 3.4 6 5.4 4.7L4 5Zm14.6 0 1.4.4c1.3 1.2 2.3 2.7 2.9 4.4l.3 1.4-.3 1.4c-.6 1.8-1.6 3.4-2.9 4.7l-1.4.4 1.3-1.5c1.2-.9 2.2-2 2.9-3.3-1.8-1.5-3.1-3.6-3.6-6H15V5h3.6ZM11.2 3h1.6l3.8 17h-1.6l-3.8-17ZM8 10h8v1.5H8V10Z" fill="currentColor"/></svg>
+    </div>
+    <div class="header-text">
+      <h1>AI 翻译助手</h1>
+      <p>全页翻译 · 划词翻译 · 网页总结</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="section-title">翻译方向</div>
+      <div class="segmented" role="radiogroup" aria-label="翻译方向">
+        <label><input type="radio" name="direction" value="auto" checked /><span>自动</span></label>
+        <label><input type="radio" name="direction" value="zh-en" /><span>中 → 英</span></label>
+        <label><input type="radio" name="direction" value="en-zh" /><span>英 → 中</span></label>
+      </div>
+      <div class="action-grid">
+        <button id="translatePage" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm0 1.6c1.5 1.6 2.5 3.8 2.8 6.4H9.2c.3-2.6 1.3-4.8 2.8-6.4ZM6.2 6.7c1 1.2 1.8 2.7 2.2 4.5H5.3c.2-1.6.5-3.1 1-4.5Zm-.9 6.2h3.1c-.4 1.8-1.2 3.3-2.2 4.5-.5-1.4-.8-2.9-1-4.5Zm3.9 0h5.6c-.3 2.6-1.3 4.8-2.8 6.4-1.5-1.6-2.5-3.8-2.8-6.4Zm7.5 0h3.1c-.2 1.6-.5 3.1-1 4.5-1-1.2-1.8-2.7-2.1-4.5Zm.5-1.7c.4-1.8 1.2-3.3 2.2-4.5.5 1.4.8 2.9 1 4.5h-3.2ZM13.6 4c1.5 1.6 2.5 3.8 2.8 6.4H9.6c.3-2.6 1.3-4.8 2.8-6.4Z" fill="currentColor"/></svg>
+          翻译整个网页
+        </button>
+        <button id="summarizePage" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l5 5v15H6V2Zm7 1.8V8h4.2L13 3.8ZM8.5 11h8v1.5h-8V11Zm0 3.5h8V16h-8v-1.5Zm0 3.5h5V19.5h-5V18Z" fill="currentColor"/></svg>
+          总结网页
+        </button>
+      </div>
+      <p class="hint">翻译后可点击页面右下角按钮恢复原文</p>
+    </section>
+
+    <section class="card">
+      <div class="section-title">快速翻译</div>
+      <textarea id="quickInput" rows="3" placeholder="输入任意文字，自动中英互译…"></textarea>
+      <div class="btn-row">
+        <button id="quickTranslate" class="btn btn-primary btn-sm">翻译</button>
+        <button id="clearResult" class="btn btn-ghost btn-sm">清空</button>
+      </div>
+      <div id="result" class="result" hidden></div>
+    </section>
+
+    <section class="card">
+      <div class="section-title">
+        API 设置
+        <span id="saveStatus" class="save-status"></span>
+      </div>
+      <label class="field">
+        <span>Base URL</span>
+        <input id="baseUrl" type="text" placeholder="https://api.deepseek.com" autocomplete="off" spellcheck="false" />
+      </label>
+      <label class="field">
+        <span>API Key</span>
+        <span class="input-wrap">
+          <input id="apiKey" type="password" placeholder="sk-..." autocomplete="off" spellcheck="false" />
+          <button id="toggleKey" class="text-btn" type="button">显示</button>
+        </span>
+      </label>
+      <label class="field">
+        <span>模型</span>
+        <input id="model" type="text" placeholder="deepseek-flash" autocomplete="off" spellcheck="false" />
+      </label>
+      <div class="btn-row">
+        <button id="testConnection" class="btn btn-secondary btn-sm">测试连接</button>
+        <button id="saveConfig" class="btn btn-ghost btn-sm">保存设置</button>
+      </div>
+      <p id="settingsMsg" class="msg"></p>
+    </section>
+  </main>
+
+  <footer>配置仅保存在本机浏览器中</footer>
+  <div id="popupToast" class="popup-toast" hidden></div>
+  <script src="popup.js"></script>
+</body>
+</html>

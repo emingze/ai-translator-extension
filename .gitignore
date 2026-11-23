@@ -1,0 +1,6 @@
+node_modules/
+.playwright-cli/
+*.log
+.DS_Store
+test-artifacts/
+local-test-config.json

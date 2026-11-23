@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="AI 翻译助手：支持全页面翻译、划词翻译与网页总结的 Chrome 插件，兼容 OpenAI 协议，支持中英互译。" />
+  <title>AI 翻译助手 · 把网页读成你的语言</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header" id="top">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="AI 翻译助手首页">
+        <span class="brand-mark" aria-hidden="true">译</span>
+        <span class="brand-name">AI 翻译助手</span>
+      </a>
+      <nav class="site-nav" aria-label="主导航">
+        <a href="#about">介绍</a>
+        <a href="#features">功能</a>
+        <a href="#install">安装</a>
+      </nav>
+      <a class="header-cta" href="#install">获取插件</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">浏览器里的 AI 翻译助手</p>
+          <h1 id="hero-title">把网页，<br />读成你的语言。</h1>
+          <p class="hero-en" lang="en">Read the web in your language.</p>
+          <p class="lede">一键翻译整页，划词即译生词，长文自动总结。兼容 OpenAI 协议，用你熟悉的模型阅读世界。</p>
+          <div class="hero-actions">
+            <a class="button" href="#install">查看安装步骤</a>
+            <a class="quiet-link" href="#features">先看功能</a>
+          </div>
+        </div>
+
+        <div class="specimen" aria-label="翻译效果示意">
+          <div class="specimen-bar">
+            <span>网页正文</span>
+            <span class="specimen-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+          </div>
+          <div class="specimen-body">
+            <p class="source" lang="en">Artificial intelligence helps people <mark>understand foreign languages</mark> quickly.</p>
+            <span class="translate-chip" aria-hidden="true">译</span>
+            <p class="target">人工智能帮助人们<strong>快速理解外语</strong>。</p>
+          </div>
+          <div class="specimen-foot">
+            <span lang="en">English</span>
+            <span class="swap" aria-hidden="true">↔</span>
+            <span>简体中文</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap layout">
+        <div class="section-main">
+          <h2 id="about-title">为阅读而做，<br />不为设置而累。</h2>
+          <p class="prose">打开网页，点一下就能读。插件把翻译、查词和总结放进浏览器：不必切换标签页，也不用反复复制粘贴。</p>
+          <p class="prose">在弹窗中填写 Base URL、API Key 和模型名称即可开始。配置只保存在当前浏览器本地，插件不会上传你的密钥。</p>
+        </div>
+        <aside class="margin-note" aria-label="产品要点">
+          <p>兼容 OpenAI 协议</p>
+          <p>支持中英互译</p>
+          <p>密钥仅存本地</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="features" aria-labelledby="features-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <h2 id="features-title">三种方式，读懂每一页。</h2>
+          <p>从整篇文章到一个词组，按你的阅读节奏选择。</p>
+        </div>
+
+        <div class="layout">
+          <div class="section-main">
+            <article class="feature">
+              <div class="feature-copy">
+                <h3>全页面翻译</h3>
+                <p>点击一次，正文中的段落、标题和列表即刻切换为译文。读完后可一键恢复原文，页面内容不会被改写。</p>
+              </div>
+              <div class="feature-visual page-visual" aria-hidden="true">
+                <div class="visual-bar"><span>阅读模式</span><span>已翻译</span></div>
+                <div class="visual-rows">
+                  <div class="row-pair"><span lang="en">Project Overview</span><strong>项目概览</strong></div>
+                  <div class="row-pair"><span lang="en">Our extension supports full page translation.</span><strong>我们的插件支持整页翻译。</strong></div>
+                  <div class="row-pair"><span lang="en">Settings are stored locally.</span><strong>设置保存在本地。</strong></div>
+                </div>
+                <div class="visual-foot"><span>恢复原文</span></div>
+              </div>
+            </article>
+
+            <article class="feature">
+              <div class="feature-copy">
+                <h3>划词翻译</h3>
+                <p>选中不确定的词句，浮窗直接给出译文。只翻译你需要的部分，不打断当前阅读。</p>
+              </div>
+              <div class="feature-visual selection-visual" aria-hidden="true">
+                <p class="selection-sentence">这是一款支持<mark>中英互译</mark>的浏览器插件。</p>
+                <div class="selection-card">
+                  <span class="selection-label">划词翻译</span>
+                  <strong lang="en">Chinese-English translation</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="feature">
+              <div class="feature-copy">
+                <h3>网页总结</h3>
+                <p>长篇内容太长？一键提取一句话概述和要点列表，快速判断这篇文章值不值得细读。</p>
+              </div>
+              <div class="feature-visual summary-visual" aria-hidden="true">
+                <div class="summary-head"><span>网页总结</span><span class="summary-lines"><i></i><i></i><i></i></span></div>
+                <p class="summary-lead">这款插件让浏览器阅读跨语言内容变得更直接。</p>
+                <ul>
+                  <li>整页翻译与原文一键切换</li>
+                  <li>选中文字即可查看译文</li>
+                  <li>长文自动生成要点概述</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <aside class="margin-note" aria-label="功能补充说明">
+            <p>整页与原文切换</p>
+            <p>中文与英文互译</p>
+            <p>概述与 3–6 条要点</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section install" id="install" aria-labelledby="install-title">
+      <div class="wrap">
+        <div class="section-intro">
+          <h2 id="install-title">从安装到翻译，只需四步。</h2>
+          <p>当前版本通过 Chrome 的本地扩展方式加载，不需要额外账号。</p>
+        </div>
+
+        <div class="layout">
+          <ol class="section-main steps">
+            <li>
+              <span class="step-number" aria-hidden="true">01</span>
+              <div>
+                <h3>打开扩展程序页面</h3>
+                <p>在 Chrome 地址栏输入 <code>chrome://extensions</code>，然后回车。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">02</span>
+              <div>
+                <h3>开启开发者模式</h3>
+                <p>打开页面右上角的“开发者模式”开关。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">03</span>
+              <div>
+                <h3>加载插件文件夹</h3>
+                <p>点击“加载已解压的扩展程序”，选择插件所在文件夹。</p>
+              </div>
+            </li>
+            <li>
+              <span class="step-number" aria-hidden="true">04</span>
+              <div>
+                <h3>填写 API 配置</h3>
+                <p>点击工具栏图标，填入 Base URL、API Key 和模型名称，保存后即可使用。可先点击“测试连接”确认接口可用。</p>
+              </div>
+            </li>
+          </ol>
+          <aside class="margin-note" aria-label="安装提示">
+            <p>配置保存在当前浏览器</p>
+            <p>可随时更换模型</p>
+            <p>支持任意 OpenAI 兼容接口</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark small" aria-hidden="true">译</span>
+        <span>AI 翻译助手</span>
+      </div>
+      <p>兼容 OpenAI 协议 · 支持中英互译</p>
+      <a href="#top">回到顶部</a>
+    </div>
+  </footer>
+</body>
+</html>
